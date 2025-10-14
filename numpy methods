@@ -1,0 +1,53 @@
+import numpy as np
+
+# Create a sample array
+arr = np.array([1, 5, 3, 7, 5, 2, 9, 5, 3])
+
+# ------------------------------
+# a. Extract numbers less than or greater than a specified number
+# ------------------------------
+specified_number = 4
+less_than = arr[arr < specified_number]
+greater_than = arr[arr > specified_number]
+
+print("Original array:", arr)
+print(f"Numbers less than {specified_number}:", less_than)
+print(f"Numbers greater than {specified_number}:", greater_than)
+
+# ------------------------------
+# b. Find indices of maximum and minimum numbers along the given axis
+# ------------------------------
+# For 1D array
+max_index = np.argmax(arr)
+min_index = np.argmin(arr)
+print("\nIndex of maximum number:", max_index)
+print("Index of minimum number:", min_index)
+
+# Example with 2D array
+arr2d = np.array([[10, 20, 30], [5, 25, 15]])
+print("\n2D Array:\n", arr2d)
+print("Indices of max along axis 0:", np.argmax(arr2d, axis=0))  # column-wise
+print("Indices of min along axis 1:", np.argmin(arr2d, axis=1))  # row-wise
+
+# ------------------------------
+# Additional demonstrations of other methods
+# ------------------------------
+# max and min values
+print("\nMaximum value in arr:", np.max(arr))
+print("Minimum value in arr:", np.min(arr))
+
+# repr - string representation of array
+print("\nString representation of arr:", np.array2string(arr))  # np.repr is internal, array2string is better
+
+# bincount - count occurrences of non-negative integers
+bincount_result = np.bincount(arr)
+print("\nBincount of array:", bincount_result)
+
+# count occurrences of a specific number
+number_to_count = 5
+count_result = np.count_nonzero(arr == number_to_count)
+print(f"Number of times {number_to_count} appears:", count_result)
+
+# unique elements
+unique_elements = np.unique(arr)
+print("\nUnique elements in the array:", unique_elements)
