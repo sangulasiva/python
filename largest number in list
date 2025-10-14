@@ -1,0 +1,8 @@
+# Create a list of numbers
+numbers = [10, 45, 23, 89, 56, 12]
+
+# Find the largest number using max()
+largest = max(numbers)
+
+# Display the result
+print("The largest number is:", largest)
