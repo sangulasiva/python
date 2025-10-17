@@ -1,0 +1,23 @@
+plt.figure(figsize=(15, 4))
+#Line Plot - Sales Trend
+plt.subplot(1, 3, 1)
+plt.plot(months, sales, color='blue',
+marker='o')
+plt.title("Monthly Sales Trend")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+# Scatter Plot - Profit vs Sales
+plt.subplot(1, 3, 2)
+plt.scatter(sales, profit, color='green',
+marker='s')
+plt.title("Profit vs Sales")
+plt.xlabel("Sales")
+plt.ylabel("Profit")
+plt.subplot(1, 3, 3)
+plt.bar(months, profit, color='orange')
+plt.title("Monthly Profit Comparison")
+plt.xlabel("Month")
+plt.ylabel("Profit")
+# Adjust layout and show plots
+plt.tight_layout()
+plt.show()
